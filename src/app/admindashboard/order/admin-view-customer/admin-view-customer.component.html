@@ -1,0 +1,24 @@
+
+  <div class="container">
+    <br>
+  
+      <h2>View Purchased Customer Information</h2>
+     <br>
+      <table align="center" class="table table-striped table-bordered">
+        <tr>
+          <th class="bg-info"> Customer Name</th>
+          <th class="bg-success">Address</th>
+          <th class="bg-warning">Contact No</th>
+          
+        </tr>
+        <tr *ngFor="let user of cartObj">
+          <td class="bg-danger">{{ user.username }}</td>
+          <td class="bg-primary">{{ user.address }}</td>
+          <td class="bg-info" >{{ user.contact_no }}</td>
+
+        </tr>
+      </table>
+    </div>
+    
+  
+  

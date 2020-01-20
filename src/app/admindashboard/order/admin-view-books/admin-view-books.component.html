@@ -1,0 +1,24 @@
+
+  <div class="container">
+    <br>
+  
+      <h2>View Purchased Books Information</h2>
+     <br>
+      <table align="center" class="table table-striped table-bordered">
+        <tr>
+          <th class="bg-info">Book Name</th>
+          <th class="bg-success">Price</th>
+          <th class="bg-warning">Total Quantity Purchased</th>
+          
+        </tr>
+        <tr *ngFor="let user of cartObj">
+          <td class="bg-danger">{{ user.book_name }}</td>
+          <td class="bg-primary">{{ user.price }}</td>
+          <td class="bg-info" >{{ user.quantity }}</td>
+
+        </tr>
+      </table>
+    </div>
+    
+  
+  

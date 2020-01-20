@@ -1,0 +1,107 @@
+<div class="container-fluid">
+    <div class="row mt-2">
+
+        <div class="col-lg-2">
+            <div class="card" id="card">
+                <div class="card-body">
+                    
+                    <div class="btn-group mt-2">
+                        <div ngbDropdown class="d-inline-block">
+                            <button class="btn btn-warning" id="dropdownBasic1" ngbDropdownToggle>Books</button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                <a routerLink="/admin/book/add">
+                                    <button ngbDropdownItem>Add book</button>
+                                </a>
+                                <a routerLink="/admin/book/view-book">
+                                    <button ngbDropdownItem>View books</button>
+                                </a>
+                                <a routerLink="/admin/book/edit-book">
+                                <!-- <button ngbDropdownItem>Edit book</button> -->
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-group mt-2">
+                            <div ngbDropdown class="d-inline-block">
+                                <button class="btn btn-warning" id="dropdownBasic1" ngbDropdownToggle>Category</button>
+                                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                    <a routerLink="/admin/category/add-category">
+                                        <button ngbDropdownItem>Add Category</button>
+                                    </a>
+                                    <!-- <a routerLink="/admin/category/view ">
+                                        <button ngbDropdownItem>View books</button>
+                                    </a>
+                                    <button ngbDropdownItem>Edit book</button> -->
+                                </div>
+                            </div>
+                        </div>
+
+                       <div class="btn-group mt-2">
+                            <div ngbDropdown class="d-inline-block">
+                                <button class="btn btn-warning" id="dropdownBasic1" ngbDropdownToggle>User</button>
+                                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                    <a routerLink="/admin/user/view-user">
+                                        <button ngbDropdownItem>View user</button>
+                                    </a>
+                                    <!-- <button ngbDropdownItem>Edit book</button> -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="btn-group mt-2">
+                                <div ngbDropdown class="d-inline-block">
+                                    <button class="btn btn-info" id="dropdownBasic1" ngbDropdownToggle>Sub Category</button>
+                                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                        <a routerLink="/admin/subcategory/add-subcategory">
+                                            <button ngbDropdownItem>Add Category</button>
+                                        </a>
+                                        <a routerLink="/admin/category/view ">
+                                            <button ngbDropdownItem>View books</button>
+                                        </a>
+                                        <button ngbDropdownItem>Edit book</button>
+                                    </div>
+                                </div>
+                            </div> -->
+
+                            <div class="btn-group mt-2">
+                                <div ngbDropdown class="d-inline-block">
+                                    <button class="btn btn-warning" id="dropdownBasic1" ngbDropdownToggle>User Order</button>
+                                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                        <a routerLink="/admin/order/view-order">
+                                            <button ngbDropdownItem>View Order</button>
+                                        </a>
+                                        <!-- <button ngbDropdownItem>Edit book</button> -->
+                                    </div>
+                                </div>
+                            </div>
+
+                    <div class="btn-group mt-2">
+                            <div ngbDropdown class="d-inline-block">
+                                    <button class="btn btn-warning" id="dropdownBasic1" ngbDropdownToggle>Location</button>
+                                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                        <!-- <a routerLink="/admin/country/add-country">
+                                            <button ngbDropdownItem>Add Country</button>
+                                        </a> -->
+                                        <a routerLink="/admin/country/add-district">
+                                            <button ngbDropdownItem>Add District</button>
+                                        </a>
+                                        <!-- <a routerLink="/admin/country/city">
+                                        <button ngbDropdownItem>Add City</button>
+                                        </a> -->
+                                    </div>
+                                </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-10">
+            <div class="card">
+                <div class="card-body">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

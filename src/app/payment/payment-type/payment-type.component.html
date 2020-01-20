@@ -1,0 +1,42 @@
+<section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading"> YOUR PAYMENT DETAILS</h1>
+         </div>
+    </section>
+<div class="container-fluid">
+        <div class="row mt-2">
+    
+            <div class="col-lg-2">
+                <div class="card" id="card">
+                    <div class="card-body">
+                        
+                            
+                            <div class="btn-group mt-2">
+                                    <div ngbDropdown class="d-inline-block">
+                                        <button class="btn btn-info" id="dropdownBasic1" ngbDropdownToggle>Payment Type</button>
+                                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                            <button [ngClass]="{'active': !isCod}" ngbDropdownItem (click)="isCod = false">Add Debit/Credit/ATM Card</button>
+                                            <button [ngClass]="{'active': isCod}" ngbDropdownItem (click)="isCod = true">Pay on Delivery (Cash/UPI/Card)</button>
+                                            <!-- <button ngbDropdownItem>Edit book</button> -->
+                                        </div>
+                                    </div>
+                                </div>
+                        <!-- <div class="btn btn-info mt-2">
+                            block1
+                        </div> -->
+    
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-lg-10">
+                <div class="card">
+                    <div class="card-body">
+                        <app-pay-on-delivery *ngIf="isCod"></app-pay-on-delivery>
+                        <app-books-payment *ngIf="!isCod"></app-books-payment>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>

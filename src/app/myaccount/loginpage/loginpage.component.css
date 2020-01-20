@@ -1,0 +1,19 @@
+#style{
+    background-color:orange;
+    height:500px;
+    width:500px;
+    
+}
+#jumbotron{
+    background-color:skyblue;
+    opacity: 0.5;
+   filter: alpha(opacity=50);
+}
+#image{
+    background-image: url("/assets/images/bk2.jpg");
+    height: 479px;
+    background-repeat: no-repeat;
+    /* opacity: 0.5; */
+  /* filter: alpha(opacity=50); */
+  
+}

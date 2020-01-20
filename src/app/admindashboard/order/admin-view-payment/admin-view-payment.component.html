@@ -1,0 +1,22 @@
+
+  <div class="container">
+    <br>
+  
+      <h2>View Payment Information</h2>
+     <br>
+      <table align="center" class="table table-striped table-bordered">
+        <tr>
+          <th class="bg-info">Total Amount</th>
+          <th class="bg-success">Payment Type</th>
+          
+        </tr>
+        <tr *ngFor="let user of cartObj">
+          <td class="bg-danger">{{ user.total_amt }}</td>
+          <td class="bg-primary">{{ user.payment_type }}</td>
+
+        </tr>
+      </table>
+    </div>
+    
+  
+  

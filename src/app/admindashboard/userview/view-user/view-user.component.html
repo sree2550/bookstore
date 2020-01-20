@@ -1,0 +1,43 @@
+
+  <div class="container">
+    <br>
+  
+      <h2>View Books</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+  
+            <th>User Name</th>
+            <th>Address</th>
+            <th>Gender</th>
+            <th>Country</th>
+            <th>State</th>
+            <th>District</th>
+            <th>Pincode</th>
+            <th>Contact No</th>
+            <th>Account Created Date Time</th>
+            <th>Action</th>
+
+          </tr>
+        </thead>
+        <tbody >
+          <tr *ngFor="let user of users">
+            <td >{{ user.username }}</td>
+            <!-- <td>{{ book.description }}</td> -->
+            <td>{{ user.address }}</td>
+            <td>{{ user.gender }}</td>
+            <td>{{ user.country }}</td>
+            <td>{{ user.state }}</td>
+            <td>{{ user.district_name }}</td>
+            <td>{{ user.pincode }}</td>
+            <td>{{ user.contact_no }}</td>
+            <td>{{ user.created_at }}</td>
+           <td><button class="btn btn-small btn-danger pull-right" (click)="fn_reject_user(user.fk_login_id)" style="margin-right:20px">Reject</button></td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+  
+  

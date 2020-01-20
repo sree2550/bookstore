@@ -1,0 +1,60 @@
+
+  <div class="container">
+    <br>
+  
+      <h2><font color="orange">View Bill Information</font></h2>
+      <br>
+      <!-- <table class="table table-borderless table-dark">
+        <thead>
+          <tr>
+  
+            <th>Book Name</th>
+            <th>Qunatity</th>
+            <th>Amount</th>
+            <th>Payment Type</th>
+            <th>Status</th>
+            <th>Purchased Date Time</th>
+            <th>Action</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of cartObj">
+            <td>{{ user.book_name }}</td>
+             <td>{{ book.description }}</td> -->
+            <!-- <td>{{ user.quantity }}</td>
+            <td>{{ user.total_amt }}</td>
+            <td>{{ user.payment_type }}</td>
+            <td>{{ user.status }}</td>
+            <td>{{ user.created_at }}</td>
+    <td><button class="btn btn-small btn-danger pull-right" (click)="fn_reject_order(user.book_id)" style="margin-right:20px">Reject</button></td>
+
+          </tr>
+        </tbody>
+      </table> -->
+      <table align="center" class="table table-striped table-bordered">
+        <thead class="thead-dark">
+        <tr>
+          <th>Customer</th>
+          <th>Books</th>
+          <th>Payment Type</th>
+          <th>Operation</th>
+        </tr>
+        </thead>
+        <tr *ngFor="let user of cartObj">
+          <!-- <td>{{ user.fk_user_id }}</td> -->
+          <td class="table-primary"><button type="button" class="btn btn-primary"  routerLink="/admin/order/admin-view-customer/{{user.fk_user_id}}" >View Customer</button></td>
+          <td class="table-success"><button type="button" class="btn btn-primary" routerLink="/admin/order/admin-view-books/{{user.fk_user_id}}">View Books</button></td>
+          <td class="table-danger"><button type="button" class="btn btn-primary" routerLink="/admin/order/admin-view-payment/{{user.fk_user_id}}">View Payment</button>
+          <td class="table-warning"><button type="button" class="btn btn-danger" (click)="fn_confirm(user.fk_user_id);">Confirm Order</button>
+
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="alert alert-info" *ngIf="cartObj.length==0">
+      <strong>Info!</strong> No Active <a href="#" class="alert-link">Bill Information</a>.
+    </div>
+    
+  
+  

@@ -1,0 +1,68 @@
+<div class="container">
+    <br>
+    <h2>
+      <font color="orange"><b>View Books</b></font>
+    </h2>
+    
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Book Image</th>
+          <th>Book Name</th>
+          <th>Price</th>
+          <th>Discount</th>
+
+
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor="let bookObj of books">
+            <td><img src="{{bookObj.book_image}}"  style="width:50px;height:50px"></td>
+
+          <td>{{ bookObj.book_name }}</td>
+          <td>₹{{ bookObj.price }}</td>
+          <td>{{ bookObj.discount }}</td>
+
+          <td>
+            <button routerLink="/admin/book/edit-book/{{bookObj.book_id}}" class="btn btn-small btn-danger pull-right"
+              style="margin-right:20px">Update</button></td>
+          <td><button class="btn btn-small btn-success pull-right" (click)="deleteData(bookObj.book_id)"
+              style="margin-right:20px">Delete</button></td>
+        </tr>
+
+        <!-- <tr *ngIf="books.length==0 && ((bookObj|json) != '{}')">
+
+          <td>{{ book.book_id }}</td>
+          <td>{{ bookObj.book_name }}</td>
+          <td>{{ book.description }}</td>
+          <td>{{ bookObj.category_name }}</td>
+
+          <td>{{ bookObj.pub_name }}</td>
+          <td>{{ bookObj.price }}</td>
+          <td>{{ bookObj.quantity }}</td>
+          <td>{{ bookObj.discount }}</td>
+          <td><img src="{{bookObj.book_image}}"  style="width:50px;height:50px"></td>
+          <td>
+            <button routerLink="/admin/book/edit-book/{{bookObj.book_id}}" class="btn btn-small btn-danger pull-right"
+              style="margin-right:20px">Update</button></td>
+          <td><button class="btn btn-small btn-success pull-right" (click)="deleteData(bookObj.book_id)"
+              style="margin-right:20px">Delete</button></td>
+        </tr> -->
+
+      </tbody>
+      
+    </table>
+    <!-- <div class="col-lg-12" *ngIf="books.length==0">
+      <div class="alert alert-info">
+          No books found
+      </div>
+  </div> -->
+
+  <div  *ngIf="books.length==0" #alert class="alert alert-warning alert-dismissible fade show" role="alert" >
+    <button type="button" class="close" aria-label="Close" (click)="closeAlert()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <strong> No books found</strong> Please Check for other books.
+  </div>

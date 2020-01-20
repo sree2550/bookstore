@@ -1,0 +1,92 @@
+<div class="container">
+  <h1> &nbsp;&nbsp;<font color="orange">Add Book</font>
+  </h1>
+  <div class="form-group">
+    <label class="control-label col-sm-4" for="bookname">Book Name:</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" [(ngModel)]="userObj.bookname" id="txtbook" placeholder="Enter Book Name"
+        name="txtbook">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-4" for="inputCity">Book Category</label>
+    <div class="col-sm-4">
+      <select (click)="get_category();" [(ngModel)]="userObj.bookcat" id="inputCity" class="form-control">
+        <option selected>Choose...</option>
+        <option *ngFor="let x of category" [value]="x.cat_id">
+          {{ x.category_name }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-4" for="des">Description:</label>
+    <div class="col-sm-4">
+      <textarea class="form-control" [(ngModel)]="userObj.description" id="txtdescription"
+        placeholder="Description of Book" name="txtdescription" rows="5"></textarea>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-4" for="authorname">Publisher Name:</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" [(ngModel)]="userObj.pubname" id="txtauthor"
+        placeholder="Enter Author Name" name="txtauthor">
+
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="control-label col-sm-4" for="price">Price:</label>
+    <div class="col-sm-4 input-group">
+      <span class="input-group-addon">₹</span>
+      <input type="text" class="form-control" [(ngModel)]="userObj.price" id="txtprice" placeholder="Enter Price"
+        name="txtprice">
+
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-4" for="qty">Quantity in Stock:</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" [(ngModel)]="userObj.quantity" id="txtqty" placeholder="Enter Quantity"
+        name="txtqty">
+
+    </div>
+  </div>
+  <!-- <div class="form-group">
+            <label class="control-label col-sm-4" for="unit">Unit:</label>
+            <div class="col-sm-4">          
+                <input type="text" class="form-control" id="txtunit" placeholder="Enter Unit" name="txtunit">
+
+            </div>
+          </div> -->
+
+  <div class="form-group">
+    <label class="control-label col-sm-4" for="discount">Discount:</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" [(ngModel)]="userObj.discount" id="txtdiscount" placeholder="Enter Unit"
+        name="txtdiscount">
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="control-label col-sm-4" for="image">Upload Book Image</label>
+    <div class="col-sm-4">
+      <img [src]="imgSrc"  style="width:250px;height:200px">
+
+      <input type="file" #image class="form-control-file" (change)="onFileSelected($event)">
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button (click)="fn_addbook();" class="btn btn-info">Submit</button>
+    </div>
+  </div>
+
+</div>

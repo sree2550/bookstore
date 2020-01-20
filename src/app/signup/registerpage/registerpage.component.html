@@ -1,0 +1,73 @@
+        <div class="container">
+          <div class="jumbotron col-md-12">
+
+            <h1>My Account / Register</h1>
+            <br>
+                    <div class="form-row">
+                      <div class="form-group col-md-4">
+                        <label for="inputFullname4"><font color="black"><b>Full Name</b></font></label>
+                        <input type="text" class="form-control" [(ngModel)]="userObj.fullname">
+                      </div>
+                      <div class="form-group col-md-4">
+                        <label for="inputPassword4"><font color="black"><b>Password</b></font></label>
+                        <input type="password" class="form-control" [(ngModel)]="userObj.password" id="inputPassword" name="inputPassword" required>
+                      </div>
+                      <div class="form-group col-md-4">
+                            <label for="inputEamil4"><font color="black"><b>Email</b></font></label>
+                            <input type="email" class="form-control" [(ngModel)]="userObj.email" id="inputEamil" name="inputEamil" required>
+                          </div>
+                    </div>
+                    <label for="inputEamil4"><font color="black"><b>Gender</b></font></label>
+                    <br>
+                    <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio"   id="customRadio1" name="customRadio" class="custom-control-input" [(ngModel)]="userObj.customRadio" value="M">
+                            <label class="custom-control-label" for="customRadio1">Male</label>
+                          </div>
+                          <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio"   id="customRadio2" name="customRadio" class="custom-control-input" [(ngModel)]="userObj.customRadio" value="F">
+                            <label class="custom-control-label" for="customRadio2">Female</label>
+                          </div>
+                          
+                    <div class="form-group">
+                        <br>
+                      <label for="inputAddress"><font color="black"><b>Address</b></font></label>
+                      <textarea class="form-control" [(ngModel)]="userObj.address"  id="inputAddress" name="inputAddress" placeholder="1234 Main St"></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                      
+                     
+                      <div class="form-group col-md-4">
+                            <label for="inputCountry"><font color="black"><b>Country</b></font></label>
+                            <input type="text" id="inputCountry" [(ngModel)]="userObj.country"  class="form-control" name="inputCountry">
+                              
+                          </div>
+                          <div class="form-group col-md-4">
+                            <label for="inputState"><font color="black"><b>State</b></font></label>
+                            <input type="text" id="inputState" [(ngModel)]="userObj.state" class="form-control" name="inputState">
+                             
+                          </div>
+                          <div class="form-group col-md-4">
+                            <label for="inputCity"><font color="black"><b>District</b></font></label>
+                            <select id="inputCity" [(ngModel)]="userObj.district" (click)="get_districts();"  name="inputCity" class="form-control">
+                                    <option selected>Choose...</option>
+                                    <option *ngFor="let x of districts" [value]="x.district_id">
+                                      {{ x.district_name }}
+                                    </option>
+                                  </select>
+                          </div>
+                      <div class="form-group col-md-2">
+                        <label for="inputZip"><font color="black"><b>Zip</b></font></label>
+                        <input type="text" class="form-control" [(ngModel)]="userObj.zip"  id="inputZip" name="inputZip">
+                      </div>
+                      <div class="form-group col-md-4">
+                            <label for="inputContact"><font color="black"><b>Contact Number</b></font></label>
+                            <input type="text" class="form-control" [(ngModel)]="userObj.contactno"  id="inputContact" name="inputContact">
+                          </div>
+                    </div>
+                    
+                    
+                    <button (click)="fn_signup();" class="btn btn-dark">Sign in</button>
+                    <h5>not Registered? <a routerLink="/myaccount"><font color="red">Login here</font></a></h5>
+        </div>
+        </div>

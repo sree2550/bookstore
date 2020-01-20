@@ -1,0 +1,40 @@
+<section class="jumbotron text-center">
+        <div class="container">
+            <div class="row">
+                <!-- <div class="col-md-3">
+            <img src="assets/images/cash.jpg"  height="100" width="50" >   
+        </div> -->
+       <div class="col-md-4">
+            <h3><font color="orange">Order Summary</font></h3>
+        <br>
+            <table class="table table-info">
+                    <thead>
+                      <tr >
+                        <th>Order ID</th>
+                        <!-- <th>Items</th> -->
+                        <th>Delivery Charge</th>
+                        <th>Order Total</th>
+                        <th>Place Order</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>1</th>
+                        <!-- <td>13,999.00</td> -->
+                        <td>10.00</td>
+                        <td>{{ ServCart.fn_get_total_price() * 10 }} </td>
+                     <td>  <button type="button" class="btn btn-primary"  (click)="fn_pay(ServCart.fn_get_total_price()*10);">Order</button></td>
+
+                      </tr>
+                      <tr>
+                          
+                          
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+           </div>
+         </div>
+         </div>
+
+    </section>

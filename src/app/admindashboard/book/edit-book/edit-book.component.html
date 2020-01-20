@@ -1,0 +1,96 @@
+
+<!-- {{ bookObj | json }} -->
+<div class="container">
+    <h1> &nbsp;&nbsp;<font color="orange">Edit Book</font>
+      <div class="form-group">
+        <!-- <label class="control-label col-sm-4" for="image">Upload Book Image</label> -->
+        <div class="col-sm-4 float-right">
+          <img src="{{bookObj.book_image}}"  style="width:250px;height:350px;">
+    
+          <!-- <input type="file"  #image class="form-control-file" (change)="onFileSelected($event)"> -->
+        </div>
+      </div>
+    </h1>
+
+
+    
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="bookname">Book Name:</label>
+      <div class="col-sm-4">        
+        <input type="text" class="form-control" name="book_name" [(ngModel)]="bookObj.book_name" id="txtbook" placeholder="Enter Book Name"
+          name="txtbook">
+      </div>
+    </div>
+  
+    <div class="form-group">
+        <label class="control-label col-sm-4" for="bookcat">Book Category:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" [(ngModel)]="bookObj.category_name" id="txtcat"   placeholder="Enter Book Category"
+            name="txtcat" readonly>
+        </div>
+      </div>
+
+    <!-- <div class="form-group">
+      <label class="control-label col-sm-4" for="des">Description:</label>
+      <div class="col-sm-4">
+        <textarea class="form-control" [(ngModel)]="userObj.description" id="txtdescription"
+          placeholder="Description of Book" name="txtdescription" rows="5"></textarea>
+      </div>
+    </div> -->
+  
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="authorname">Publisher Name:</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="txtauthor"
+          placeholder="Enter Author Name" name="txtauthor" [(ngModel)]="bookObj.pub_name">
+  
+      </div>
+    </div>
+  
+  
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="price">Price:</label>
+      <div class="col-sm-4 input-group-prepend">
+        <span class="input-group-text">₹</span>
+        <input type="text" class="form-control" id="txtprice" [(ngModel)]="bookObj.price" placeholder="Enter Price"
+          name="txtprice">
+  
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="qty">Quantity in Stock:</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control"  id="txtqty" [(ngModel)]="bookObj.quantity" placeholder="Enter Quantity"
+          name="txtqty">
+  
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="discount">Discount:</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control"  id="txtdiscount" [(ngModel)]="bookObj.discount" placeholder="Enter Unit"
+          name="txtdiscount">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="stock">Stock Status:</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control"  id="txtstatus" [(ngModel)]="bookObj.stock" placeholder="Enter Unit"
+          name="txtstatus">
+      </div>
+    </div>
+  
+  
+   
+  
+  
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button (click)="UpdateData();" class="btn btn-info">Edit</button>
+      </div>
+    </div>
+  
+  </div>
+  

@@ -1,0 +1,83 @@
+
+<br>
+<div class="main-menu">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="navbar-item active">
+                        
+                        <a routerLink="/home" class="nav-link">Home |</a>
+                    </li>                   
+                    <li class="navbar-item">
+                        <a routerLink="/myaccount" class="nav-link">Logout |</a>
+                    </li>
+                </ul>
+               &nbsp;&nbsp; <div class="cart my-2 my-lg-0">
+                    <span>
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                    <span class="quntity"><font color="red">   {{ ServCart.cart.length }}</font></span>
+                </div>
+                &nbsp;&nbsp; <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search here..." aria-label="Search">
+                    <span class="fa fa-search"></span>
+                </form>
+            </div>
+        </nav>
+    </div>
+</div>
+<br>
+<div class="container-fluid">
+    <div class="row mt-2">
+    <div class="col-lg-2">
+        <div class="card">
+            <div class="card-body" >
+                <div *ngFor="let bookObj of book"></div>
+    <div class="form-group col-md-12" >
+        <a href="{{bookObj.book_image}}" class="thumbnail">
+            <img src="{{bookObj.book_image}}" alt="img" class="thumbnail" style="height: 150px; width: 150px;">
+
+            </a>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="col-lg-10">
+        <div class="card">
+        <div class="card-body">
+            <div class="jumbotron" id="jumbo">
+                <h1>Book Description</h1>
+                <br>
+                <p>{{bookObj.description}}</p>
+               </div>
+    
+           &nbsp;&nbsp;&nbsp; <h3>  &nbsp;&nbsp;&nbsp;Book Details</h3>
+            <table class=" col-md-4 table table-striped table-default" id="jumbo">
+                <tbody>
+                    <tr class="table-primary">
+                      <td><b>Book Available</b></td>
+                      <td><i>{{bookObj.stock}}</i></td>
+
+                    </tr> 
+                    <tr class="table-success">
+                        <td><b>Discount</b></td>
+                        <td><i>{{bookObj.discount}}</i></td>
+                      </tr> 
+                    <tr class="table-danger">
+                        <td><b>Price</b></td>
+                        <td><i>₹ {{bookObj.price}}</i></td>
+                      </tr> 
+
+                   
+                    </tbody>
+            </table>
+          <br>
+            <!-- <div class="btn-sec">
+                &nbsp;&nbsp;&nbsp; <a routerLink="/cart/{{bookObj.book_id}}"><button class="btn btn-warning">Add To cart/Buy Now</button></a>
+            <a routerLink="/payment"><button class="btn btn-dark">Buy Now</button></a>
+        </div> -->
+</div>
